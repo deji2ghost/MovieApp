@@ -23,13 +23,13 @@ export const MovieList = (props) => {
     }).then(res => props.setMovietype(res.data.results))
   }, [])
   return (
-    <div className='cursor-pointer flex flex-wrap border'>
+    <div className='cursor-pointer grid grid-cols-4 border'>
       { 
         props.searchedMovie.map(movie => {
           return(
-            <>
+            <div key={movie.id}>
               <Cards movie={movie} id={movie.id}/>
-            </>
+            </div>
           )
         })
       }

@@ -13,13 +13,13 @@ export const Cards = (props) => {
   return (
     <>
       {isLoading ?
-        <div key={props.id} className='rounded-xl relative w-1/5 bg-slate-800/20'>
+        <div className='rounded-xl relative w-1/5 bg-slate-800/20'>
           <SkeletonTheme color="#202020" highlightColor="#444">
             <Skeleton height={300} duration={5}></Skeleton>
           </SkeletonTheme> 
         </div>
           :
-        <Link to={`/movies/${props.movie.id}`} key={props.id} className='relative w-1/5 rounded-xl'>
+        <Link to={`/movies/${props.movie.id}`} className='relative w-1/5 rounded-xl'>
           <img className='rounded-xl' src={`https://image.tmdb.org/t/p/w500/${props.movie.poster_path}`}/>
           <div className='absolute bottom-1'>
             <div className='font-bold text-xl text-red-800'>{props.movie.title}</div>

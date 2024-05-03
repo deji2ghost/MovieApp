@@ -81,11 +81,11 @@ export const Home = (props) => {
         <FontAwesomeIcon onClick={prevSlide} className='absolute left-1 top-1/2 text-red-700' icon={faArrowLeft} />
         <FontAwesomeIcon onClick={nextSlide} className='absolute right-1 top-1/2 text-red-700' icon={faTruckArrowRight} />
       </div>
-      <div className='cursor-pointer flex flex-wrap mx-auto justify-evenly'>
+      <div className='cursor-pointer grid grid-cols-4 mx-auto justify-evenly'>
       {
         props.searchHome.map(movie => {
           return(
-            <Link to={`/movies/${movie.id}`} key={movie.id} className='relative w-1/5 rounded-xl'>
+            <Link to={`/movies/${movie.id}`} key={movie.id} className='relative rounded-xl'>
               <img className='rounded-xl' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
               <div className='absolute bottom-1'>
                 <h1 className='font-bold text-xl text-red-800'>{movie.title}</h1>
